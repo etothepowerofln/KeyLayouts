@@ -190,9 +190,17 @@ xkb_symbols "basic" {
     key <AC06> { [h, H],
                  [Greek_eta, Greek_ETA, U210F, U210B] };
     
-    key <AC07> { [j, J] };
+    key <AC07> { [j, J],
+       actions = [NoAction(),
+                  NoAction(),
+                  RedirectKey(key=<VOL->, clearmods=LevelThree),
+                  RedirectKey(key=<VOL->, clearmods=LevelThree)] };
     
     key <AC08> { [k, K],
+       actions = [NoAction(),
+                  NoAction(),
+                  RedirectKey(key=<VOL+>, clearmods=LevelThree),
+                  RedirectKey(key=<VOL+>, clearmods=LevelThree)],
                  [Greek_kappa, Greek_KAPPA] };
     
     key <AC09> { [l, L],
@@ -229,13 +237,18 @@ xkb_symbols "basic" {
                  [Greek_nu, Greek_NU, U2115] };
     
     key <AB07> { [m, M],
+       actions = [NoAction(),
+                  NoAction(),
+                  RedirectKey(key=<MUTE>, clearmods=LevelThree),
+                  RedirectKey(key=<MUTE>, clearmods=LevelThree)],
                  [Greek_mu, Greek_MU] };
     
     key <AB08> { [     comma,       less,   dead_cedilla,  leftanglebracket] };
     
     key <AB09> { [    period,    greater, periodcentered, rightanglebracket] };
     
-    key <AB10> { [     slash,   question,   questiondown,     exclamdown] };
+    key <AB10> { [     slash,   question,   questiondown,     exclamdown],
+                 [XF86AudioMute] };
     
     key <RTSH> { [dead_grave, dead_tilde,          grave,     asciitilde] };
     
@@ -247,5 +260,3 @@ xkb_symbols "basic" {
     key <RCTL> { [ Mode_switch ] };
     
 };
-
-    
